@@ -1,14 +1,17 @@
-//import logo from './logo.svg';
-import './App.css';
+
+import React from "react";
 import UsersContainer from "./Commponents/UsersContainer";
 
-function App() {
-  return (
-    <div className="container">
-      <h1>List Users</h1>
-        <UsersContainer/>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+    return (
+      <div className="container">
+        <h1>List Users</h1>
+          <UsersContainer/>
+      </div>
+    );
+  }
+ 
 }
 
 export default App;

@@ -5,6 +5,7 @@ import User from "./User";
 class UsersContainer extends React.Component{
     constructor(props) {
         super(props)
+        this.tab=[];
         this.state={
             results:[]
         }
@@ -17,8 +18,7 @@ class UsersContainer extends React.Component{
         })
         
     }
-   /* afficheUsers=()=>{
-        //const {results}=this.state.results;
+    afficheUsers=()=>{
         console.log("son type:", this.state.results[0]);
         let k=[];
 
@@ -26,12 +26,11 @@ class UsersContainer extends React.Component{
             //console.log(this.state.results[i]);
             let d=this.state.results[i];
             console.log("voici d:",d);
-            let v;
-           v=<User don={d}/>;
+            let v=<User don={d} key={d}/>;
             k.push(v);
         }
         return k;
-    }*/
+    }
     kk(){
         let l=[]
         this.state.results.forEach(item=>{
@@ -53,12 +52,15 @@ class UsersContainer extends React.Component{
                 
                
                 {
-                   //this.afficheUsers()
-                    this.state.results.forEach(item=>{
-                       console.log(item);
-                        <User don={item} key={item.id}/>
-                    })
+                    this.afficheUsers()
+                    /*this.state.results.forEach(item=>{
+                       //console.log(item);
+                       this.tab.push(<User don={item} key={item.id}/>)
+                    })*/
                   
+                }
+                {
+                    this.tab
                 }
                 
             </div>

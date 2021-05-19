@@ -20,7 +20,7 @@ class User extends React.Component{
                             <span>Genre:{this.props.don.name.title}{ this.props.don.name.first} { this.props.don.name.last}</span><br/>
                             <span>Email:{this.props.don.email}</span>
                             <span>Phone:{this.props.don.phone}</span>
-                            <span>Location:{this.props.don.location.street} {this.props.don.location.city} {this.props.don.location.state} {this.props.don.location.postcode}</span>
+                            <span>Location:{this.props.don.location.street.number} {this.props.don.location.street.name} {this.props.don.location.city} {this.props.don.location.state} {this.props.don.location.postcode}</span>
                         </p>
                     </div>
                 </div>

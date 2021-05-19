@@ -5,10 +5,11 @@ import User from "./User";
 class UsersContainer extends React.Component{
     constructor(props) {
         super(props)
-        this.tab=[];
+        
         this.state={
             results:[]
         }
+        this.getUsers()
     }
     getUsers=()=>{
         fetch('https://randomuser.me/api?results=10')
@@ -19,33 +20,20 @@ class UsersContainer extends React.Component{
         
     }
     afficheUsers=()=>{
-        console.log("son type:", this.state.results[0]);
         let k=[];
-
-        for(let i=0;i<10;i++){
-            //console.log(this.state.results[i]);
-            let d=this.state.results[i];
-            console.log("voici d:",d);
-            let v=<User don={d} key={d}/>;
-            k.push(v);
-        }
+        this.state.results.map((value,index)=>{
+            k.push(<User don={value} key={k.length}/>)
+            console.log(value);
+            return value
+        });
+       
         return k;
-    }
-    kk(){
-        let l=[]
-        this.state.results.forEach(item=>{
-            console.log(item);
-             l.push(<User don={item} key={item.id}/>)
-         })
-         return l;
     }
     componentDidMount(){
         this.getUsers();
     }
    
     render(){
-       // console.log("voiciles données",this.state.results);
-       //this.getUsers()
        
         return(
             <div className="row">
@@ -53,14 +41,8 @@ class UsersContainer extends React.Component{
                
                 {
                     this.afficheUsers()
-                    /*this.state.results.forEach(item=>{
-                       //console.log(item);
-                       this.tab.push(<User don={item} key={item.id}/>)
-                    })*/
+                    
                   
-                }
-                {
-                    this.tab
                 }
                 
             </div>

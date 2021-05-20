@@ -4,6 +4,7 @@ import UsersContainer from "./Commponents/UsersContainer";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Info from "./Commponents/Info";
 import Header from "./Commponents/Header";
+import Error from "./Commponents/Error";
 
 class App extends React.Component{
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends React.Component{
           <Switch>
             <Route exact path="/" component={UsersContainer}/>
             <Route path="/info" component={Info}/>
+            <Route component={Error}/>
           </Switch>
           
         </div>

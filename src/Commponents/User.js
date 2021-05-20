@@ -11,7 +11,7 @@ class User extends React.Component{
     render(){
         
         return(
-            <div className="col col-3 col-md-3 col-sm-12  m-sm-1 m-md-3">
+            <div className="col-3 col-md-3 col-sm-12   m-sm-1 m-md-3">
                 <div className="card" style={{width: "18rem"}}>
                     
                     <div className="card-body">

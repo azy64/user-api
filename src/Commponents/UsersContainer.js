@@ -1,5 +1,6 @@
 import React from 'react'
 import User from "./User";
+import Link from "react-router-dom";
 
 
 class UsersContainer extends React.Component{
@@ -37,7 +38,7 @@ class UsersContainer extends React.Component{
        
         return(
             <div className="row">
-                
+                <h1>List Users</h1>
                
                 {
                     this.afficheUsers()
